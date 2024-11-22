@@ -1,5 +1,6 @@
 package br.edu.ifsp.dsw1.servlets;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import br.edu.ifsp.dsw1.model.entity.User;
 import br.edu.ifsp.dsw1.model.entity.FlightDataCollection;
@@ -19,11 +20,6 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		FlightDataCollection db = new FlightDataCollection();
-		
-		request.setAttribute("lista", dados.getAll());*/
-
 		User usr = null;
 		HttpSession session = request.getSession(false);
 		

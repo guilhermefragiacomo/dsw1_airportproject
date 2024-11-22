@@ -11,7 +11,7 @@
 <body>
   <div class="form-container">
     <h1>Adicionar novo Voo</h1>
-    <form action="/submit-flight" method="POST">
+    <form action="NewFlight" method="POST">
       <div class="form-group">
         <label for="flight-number">Numero do Voo</label>
         <input type="text" id="flight-number" name="flight_number" required placeholder="Enter flight number">

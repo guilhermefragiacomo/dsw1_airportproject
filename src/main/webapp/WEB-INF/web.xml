@@ -24,4 +24,14 @@
     <servlet-name>AuthenticateAdmin</servlet-name>
     <url-pattern>/AuthenticateAdmin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NewFlight</display-name>
+    <servlet-name>NewFlight</servlet-name>
+    <servlet-class>br.edu.ifsp.dsw1.servlets.NewFlight</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewFlight</servlet-name>
+    <url-pattern>/NewFlight</url-pattern>
+  </servlet-mapping>
 </web-app>
