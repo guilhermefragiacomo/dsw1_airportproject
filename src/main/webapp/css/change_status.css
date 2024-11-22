@@ -1,0 +1,71 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.admin-container {
+  width: 90%;
+  max-width: 1200px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 2rem;
+}
+
+.flights-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.flights-table th, 
+.flights-table td {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 0.8rem;
+}
+
+.flights-table th {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.flights-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+select {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  margin-right: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

@@ -2,6 +2,7 @@ package br.edu.ifsp.dsw1.servlets;
 
 import jakarta.servlet.ServletException;
 import br.edu.ifsp.dsw1.model.entity.User;
+import br.edu.ifsp.dsw1.model.entity.FlightDataCollection;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,14 +19,27 @@ public class LoginServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		User usr = new User();
-		usr.setUsername(request.getParameter("username"));
-		usr.setPassword(request.getParameter("password"));
+		/*
+		FlightDataCollection db = new FlightDataCollection();
 		
+		request.setAttribute("lista", dados.getAll());*/
+
+		User usr = null;
 		HttpSession session = request.getSession(false);
-		session.setAttribute("object_user", usr);
 		
+		if (request.getParameter("logout") == "") {
+			session.setAttribute("object_user", null);
+		} else {
+			if (session == null || session.getAttribute("object_user") == null) {
+				usr = new User();
+				usr.setUsername(request.getParameter("username"));
+				usr.setPassword(request.getParameter("password"));
+				session = request.getSession();
+				session.setAttribute("object_user", usr);
+				session.setMaxInactiveInterval(5 * 60);
+			}
+		}
 		
-		doGet(request, response);
+		response.sendRedirect("index.jsp");
 	}
 }
