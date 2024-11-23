@@ -19,6 +19,8 @@ public class Commander extends HttpServlet {
 
     public Commander() {
         super();
+        
+        datasource.register(null);
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -18,9 +18,4 @@ public class Boarding implements State {
 	public void change(FlightData flight) {
 		flight.setState(TakingOff.getIntance());
 	}
-	
-	@Override
-	public String name() {
-		return "Embarcando";
-	}
 }

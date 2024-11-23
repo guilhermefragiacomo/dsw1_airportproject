@@ -36,7 +36,7 @@
 			          <td><%= f.getFlightNumber()%></td>
 			          <td><%= f.getCompany()%></td>
 			          <td><%= f.getTime()%></td>
-			          <td><%= f.getState().name()%>
+			          <td><%= f.getState().getClass().getSimpleName()%>
 			          <form action="Commander?action=update&number=<%= f.getFlightNumber()%>" method="POST">
 			          	<input type="submit" value="Atualizar">
 			          </form>
