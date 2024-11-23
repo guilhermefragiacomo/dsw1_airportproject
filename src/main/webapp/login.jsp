@@ -6,12 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <style>
+     <%@ include file="css/login.css"%>
+  </style>
 </head>
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <form action="LoginServlet" method="POST">
+        <form action="Command?action=login" method="POST">
             <div class="form-group">
                 <label for="username">Nome</label>
                 <input type="text" id="username" name="username" placeholder="Nome de usuário" required>

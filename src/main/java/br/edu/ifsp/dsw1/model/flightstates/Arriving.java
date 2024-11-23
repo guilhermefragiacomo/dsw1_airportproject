@@ -19,4 +19,9 @@ public class Arriving implements State {
 		flight.setState(Boarding.getIntance());
 	}
 
+	@Override
+	public String name() {
+		return "Chegando";
+	}
+
 }

@@ -18,5 +18,9 @@ public class TakingOff implements State {
 	public void change(FlightData flight) {
 		flight.setState(TookOff.getIntance());
 	}
-
+	
+	@Override
+	public String name() {
+		return "Decolando";
+	}
 }

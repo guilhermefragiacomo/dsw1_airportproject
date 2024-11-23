@@ -6,12 +6,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adicionar novo Voo</title>
-  <link rel="stylesheet" href="css/add_new_flight.css">
+  <style>
+     <%@ include file="css/add_new_flight.css"%>
+  </style>
 </head>
 <body>
   <div class="form-container">
     <h1>Adicionar novo Voo</h1>
-    <form action="NewFlight" method="POST">
+    <form action="Commander?action=insert" method="POST">
       <div class="form-group">
         <label for="flight-number">Numero do Voo</label>
         <input type="text" id="flight-number" name="flight_number" required placeholder="Enter flight number">

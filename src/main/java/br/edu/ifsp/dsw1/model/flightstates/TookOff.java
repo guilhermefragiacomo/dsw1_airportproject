@@ -18,5 +18,9 @@ public class TookOff implements State {
 	public void change(FlightData flight) {
 		
 	}
-
+	
+	@Override
+	public String name() {
+		return "Decolado";
+	}
 }

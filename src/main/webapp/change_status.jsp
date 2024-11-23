@@ -1,4 +1,5 @@
 <%@page import="br.edu.ifsp.dsw1.model.entity.*"%>
+<%@page import="br.edu.ifsp.dsw1.model.flightstates.*"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,7 +10,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gerenciamento de Voos</title>
-  <link rel="stylesheet" href="css/change_status.css">
+  <style>
+     <%@ include file="css/change_status.css"%>
+  </style>
 </head>
 <body>
   <div class="admin-container">
@@ -24,14 +27,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>FL123</td>
-          <td>Airline A</td>
-          <td>14:30</td>
-          <td id="status-fl123">Chegando
-          <button onclick="updateStatus('FL123')">Atualizar</button>
-          </td>
-        </tr>
+      	<%
+      		FlightDataCollection collection = (FlightDataCollection) request.getAttribute("collection");
+      		if (collection != null) {
+      			for (FlightData f : collection.getAllFligthts()) {
+      				%>
+      				<tr>
+			          <td><%= f.getFlightNumber()%></td>
+			          <td><%= f.getCompany()%></td>
+			          <td><%= f.getTime()%></td>
+			          <td><%= f.getState().name()%>
+			          <form action="Commander?action=update&number=<%= f.getFlightNumber()%>" method="POST">
+			          	<input type="submit" value="Atualizar">
+			          </form>
+			          </td>
+			        </tr>
+      			<%}
+      		}
+      	%>
       </tbody>
     </table>
   </div>

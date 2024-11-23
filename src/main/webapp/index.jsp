@@ -1,34 +1,25 @@
-<%@page import="br.edu.ifsp.dsw1.model.entity.User"%>
-<%@page import="br.edu.ifsp.dsw1.model.entity.FlightDataCollection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal</title>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal</title>
+  <style>
+     <%@ include file="css/welcome.css"%>
+  </style>
 <body>
-	<%
-	FlightDataCollection collection = new FlightDataCollection();
-	
-	User usr = null;
-	HttpSession session2 = request.getSession(false);
-	if (session2 == null || session2.getAttribute("object_user") == null) { %>
-		<%@include  file="includes/welcome.html" %>
-	<%
-	} else {
-		usr = (User) session2.getAttribute("object_user");
-		if (usr.getUsername().equals("admin")) {
-			if (usr.getPassword().equals("admin")) { %>
-				<%@include  file="includes/admin.html" %>
-			<%} else { %>
-				<%@include  file="includes/base.html" %>
-			<%}
-		} else {%>
-			<%@include  file="includes/base.html" %>
-		<%}
-	} %>
+  <div class="welcome-container">
+    <div class="left-column">
+      <h1>Portal - Aeroporto DSW1</h1>
+      <p>Através do horizonte.</p>
+      <form action="Commander?action=logged" method="POST">
+     	<input type="submit" class="login-button" value="Entrar">
+      </form>
+    </div>
+    <div class="right-column">
+      <img src="<%= request.getContextPath() %>/images/welcomepage.webp" alt="Airport Welcome" class="welcome-image">
+    </div>
+  </div>
 </body>
 </html>
